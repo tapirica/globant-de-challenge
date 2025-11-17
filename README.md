@@ -93,8 +93,7 @@ Metrics API → Lambda → PostgreSQL (Read Replica)
 ![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_upload_arch.png?raw=true)
 
 ### 3.2 Logical layers
-![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_logical_layers_architecture?raw=true)
-
+![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_logical_layers_architecture.png?raw=true)
 
 Why this architecture?
 
