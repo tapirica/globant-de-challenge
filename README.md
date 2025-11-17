@@ -89,6 +89,12 @@ S3 → SQS → Step Functions → Lambda (CSV Processor) → PostgreSQL
 Metrics API → Lambda → PostgreSQL (Read Replica)
 ```
 
+### 3.1 Architecture
+![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_upload_arch.png?raw=true)
+
+### 3.2 Logical layers
+![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_logical_layers_architecture?raw=true)
+
 
 Why this architecture?
 
