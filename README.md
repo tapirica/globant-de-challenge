@@ -82,11 +82,11 @@ CREATE TABLE hired_employees (
 
 This solution uses a scalable AWS ingestion design:
 ```
-Client → API Gateway → Lambda (CreateUpload) → S3
+Client → AWS WAF → API Gateway → Lambda (CreateUpload) → S3
 
 S3 → SQS → Step Functions → Lambda (CSV Processor) → PostgreSQL
 
-Metrics API → Lambda → PostgreSQL (Read Replica)
+Metrics API → API Gateway → Lambda → PostgreSQL (Read Replica)
 ```
 
 ### 3.1 Architecture
@@ -95,8 +95,9 @@ Metrics API → Lambda → PostgreSQL (Read Replica)
 ### 3.2 Logical layers
 ![alt text](https://github.com/tapirica/globant-de-challenge/blob/main/images/globant_logical_layers_architecture.png?raw=true)
 
-Why this architecture?
 
+Why this architecture?
+- WAF filters malicious or abusive requests before reaching your API
 - Presigned S3 uploads support large CSV files efficiently
 - SQS provides buffering, retry handling, and decoupling
 - Step Functions orchestrate validation → parsing → loading
